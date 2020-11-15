@@ -1,4 +1,5 @@
  /* Reset */
+ <?php header("content-type: text/css")?>
  * {
   margin: 0;
   padding: 0;

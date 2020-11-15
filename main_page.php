@@ -1,9 +1,16 @@
+<?php
+include('connection.php');
+$brands_sql = "select * from brands";
+$brands = sqlsrv_query($conn, $brands_sql);
+$categories_sql = "select * from productCategory";
+$categories = sqlsrv_query($conn, $categories_sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="main_page.css">
+	<link rel="stylesheet" type="text/css" href="main_page_css.php">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Project I</title>
@@ -18,9 +25,9 @@
 				<nav>
 					<ul>
 						<li><a href="main_page.html"><span>Home</span></a></li>
-						<li><a href="">About</a></li>
-						<li><a href="all_products_page.html">Products list</a></li>
-						<li><a href="">Contact</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="all_products_page.php">Products list</a></li>
+						<li><a href="contact.html">Contact</a></li>
 						<li><a href="account.html">Account</a></li>
 					</ul>
 				</nav>
@@ -28,8 +35,8 @@
 			</div>
 			<div class="row">
 				<div class="col-2">
-					<h1>Check Out Our New Designs!</h1>
-					<p>Se khong lam ban phai that vong</p>
+					<h1>Check Out Our New Designs!</h1><br>
+					<q>Make your whole set of clothes changed</q><br>
 					<a href="" class = "btn">Explore Now&#8594;</a>
 				</div>
 				<div class="col-2">
@@ -46,42 +53,13 @@
 		<div class="small-container">
 			<h1 class = "title">Categories</h1>
 			<div class="row">
+				<?php while($category_row = sqlsrv_fetch_array($categories, SQLSRV_FETCH_ASSOC)) {?>
 				<div class="col-9">
-					<img src="áo_ba_lỗ/ao_ba_lo_1.jpg">
-					<h3>Tank Top</h3>
+					<a href="all_products_page.php"><img src="<?php echo $category_row['categoryImages']; ?>">
+				</a>
+					<h3><?php echo $category_row['productCategoryName'];?></h3>
 				</div>
-				<div class="col-9">
-					<img src="áo_blazer/ao_blazer_1.jpg">
-					<h3>Blazer</h3>
-				</div>
-				<div class="col-9">
-					<img src="áo_gió_thu_đông/ao_thu_dong_1.jpg">
-					<h3>Coat</h3>
-				</div>
-				<div class="col-9">
-					<img src="áo_hoodie/ao_hoodie_1.jpg">
-					<h3>Hoodie</h3>
-				</div>
-				<div class="col-9">
-					<img src="áo_khoác/ao_khoac_nam_1.jpg">
-					<h3>Jacket</h3>
-				</div>
-				<div class="col-9">
-					<img src="áo_len/ao_len_1.jpg">
-					<h3>Sweater</h3>
-				</div>
-				<div class="col-9">
-					<img src="áo_sơ_mi/ao_so_mi_1.jpg">
-					<h3>Shirt</h3>
-				</div>
-				<div class="col-9">
-					<img src="áo_thun/ao_thun_polo_nam.jpg">
-					<h3>T-shirt</h3>
-				</div>
-				<div class="col-9">
-					<img src="áo_vest_suit/ao_vest_1.jpg">
-					<h3>Suit</h3>
-				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
@@ -98,7 +76,7 @@
 						<i class="fa fa-star"></i>
 						<i class="fa fa-star-o"></i>
 					</div>
-					<p>price</p>
+					<p>$120</p>
 				</div>
 				<div class="col-3">
 					<img src="features/feature-3.jpg">
@@ -110,7 +88,7 @@
 						<i class="fa fa-star"></i>
 						<i class="fa fa-star-o"></i>
 					</div>
-					<p>price</p>
+					<p>$125</p>
 				</div>
 				<div class="col-3">
 					<img src="features/feature-2.jpg">
@@ -122,7 +100,7 @@
 						<i class="fa fa-star"></i>
 						<i class="fa fa-star-half-o"></i>
 					</div>
-					<p>price</p>
+					<p>$159</p>
 				</div>
 			</div>
 		</div>
@@ -147,27 +125,11 @@
 	<div class="brands">
 		<div class="small-container">
 			<div class="row">
+				<?php while($brand_row = sqlsrv_fetch_array($brands, SQLSRV_FETCH_ASSOC)) { ?>
 				<div class="col-x">
-					<img src="brands/calvin-klein.png">
+					<img src="<?php echo $brand_row['brandsImage']; ?>">
 				</div>
-				<div class="col-x">
-					<img src="brands/chanel.jpg">
-				</div>
-				<div class="col-x">
-					<img src="brands/dior.jpg">
-				</div>
-				<div class="col-x">
-					<img src="brands/dolce-gabbana.jpg">
-				</div>
-				<div class="col-x">
-					<img src="brands/gucci.jpg">
-				</div>
-				<div class="col-x">
-					<img src="brands/louis-vuitton.png">
-				</div>
-				<div class="col-x">
-					<img src="brands/uniqlo.png">
-				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>

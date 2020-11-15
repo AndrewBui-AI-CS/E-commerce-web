@@ -1,11 +1,26 @@
+<?php
+include('connection.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="all_products_page.css">
+	<link rel="stylesheet" type="text/css" href="all_products_page_css.php">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Latest compiled and minified CSS -->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<title>Project I</title>
 </head>
 <body>
@@ -17,12 +32,10 @@
 				</div>
 				<nav>
 					<ul>
-						<li><a href="main_page.html"><span>Home</span></a></li>
-						<li><a href="">About</a></li>
-						<li><a href="">New</a></li>
-						<li><a href="">Special Offer</a></li>
-						<li><a href="all_products_page.html">Products list</a></li>
-						<li><a href="">Contact</a></li>
+						<li><a href="main_page.php"><span>Home</span></a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="all_products_page.php">Products list</a></li>
+						<li><a href="contact.html">Contact</a></li>
 						<li><a href="account.html">Account</a></li>
 					</ul>
 				</nav>
@@ -40,6 +53,16 @@
 			</div>
 		</div>
 	</header>
+	<section>
+		<div class="container">
+			<img src=""> <!-- advertisement -->
+		</div>
+		<div class="row">
+			<?php
+			include('side_bar.php');
+			?>
+		</div>
+	</section>
 	<footer>
 		<div class="container">
 			<div class="row">
@@ -91,5 +114,22 @@
 		</div>
 	</div>
 </footer>
+<script>
+	/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+	var dropdown = document.getElementsByClassName("dropdown-btn");
+	var i;
+
+	for (i = 0; i < dropdown.length; i++) {
+		dropdown[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var dropdownContent = this.nextElementSibling;
+			if (dropdownContent.style.display === "block") {
+				dropdownContent.style.display = "none";
+			} else {
+				dropdownContent.style.display = "block";
+			}
+		});
+	}
+</script>
 </body>
 </html>
