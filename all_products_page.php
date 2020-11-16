@@ -36,7 +36,7 @@ include('connection.php');
 						<li><a href="about.html">About</a></li>
 						<li><a href="all_products_page.php">Products list</a></li>
 						<li><a href="contact.html">Contact</a></li>
-						<li><a href="account.html">Account</a></li>
+						<li><a href="account.php">Account</a></li>
 					</ul>
 				</nav>
 				<img src="logo/cart.png" width="30px">
@@ -59,7 +59,13 @@ include('connection.php');
 		</div>
 		<div class="row">
 			<?php
-			include('side_bar.php');
+			include('side_bar_demo.php');
+			if(isset($_GET['view'])) {
+				if($_GET['view'] == 'view') {
+				include('view.php');
+				}
+			}
+			else include('ban_chay.php');
 			?>
 		</div>
 	</section>

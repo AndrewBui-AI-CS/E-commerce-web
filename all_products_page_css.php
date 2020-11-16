@@ -65,8 +65,7 @@ nav li span {
 }
 .row {
   display: flex;
-  justify-content: space-between;
-    /*border: 1px solid;*/
+  flex-wrap: wrap;
 }
 header .row {
   margin-top: 70px;
@@ -202,14 +201,13 @@ footer a:hover {
 .left-sidebar {
   position: relative;
   flex-basis: 20%;
-  <!-- border: 1px solid; -->
 }
 .sidenav {
-  min-height: auto;
+  min-height: 300px;
   width: 250px;
   position: relative;
   z-index: 1;
-  top: 180px;
+  top: 160px;
   left: 20px;
   background: #111;
   overflow-x: hidden;
@@ -300,7 +298,7 @@ footer a:hover {
   width: 25%;
   padding: 10px;
   float: left;
-  margin: 10px;
+  margin: 0px;
   <!-- border: 1px solid; -->
 }
 .col-4 img {

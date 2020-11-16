@@ -9,7 +9,7 @@ group by product.brandsId, brandsName;";
 $brands = sqlsrv_query($conn, $brand_sql);
 ?>
 <div class="left-sidebar">
-	<!-- <div class="sidenav">
+	<div class="sidenav">
 		<button class="dropdown-btn">Categories<i class = "fa fa-plus"></i></button>
 		<div class="dropdown-container">
 			<?php while($category_row = sqlsrv_fetch_array($categories, SQLSRV_FETCH_ASSOC)) {?>
@@ -41,8 +41,16 @@ $brands = sqlsrv_query($conn, $brand_sql);
 			<a href="">XL</a>
 			<a href="">XXL</a>
 		</div>
-	</div> -->
-	<ul class = 'list-group'>
+		<button class="dropdown-btn">Prices<i class = "fa fa-plus"></i></button>
+		<div class="dropdown-container">
+			<a href=""><200000đ</a>
+			<a href=""><500000đ</a>
+			<a href=""><1000000đ</a>
+			<a href=""><1500000đ</a>
+			<a href=""><2000000đ</a>
+		</div>
+	</div>
+	<!-- <ul class = 'list-group'>
 		<?php
 		$sql = 'select * from brands';
 		$result = sqlsrv_query($conn, $sql);
@@ -56,7 +64,7 @@ $brands = sqlsrv_query($conn, $brand_sql);
 				</div>
 			</li>
 		<?php } ?>
-	</ul>
+	</ul> -->
 </div>
 <?php
 $product_sql = "select * from Product";
@@ -64,7 +72,7 @@ $products = sqlsrv_query($conn, $product_sql);
 $x = 0;
 $y = 0;
 ?>
-<div class="all-product" id = 'result'>
+<!-- <div class="all-product" id = 'result'>
 	<div class="title">
 		<h2>San pham ban chay</h2>
 	</div>
@@ -136,7 +144,7 @@ $y = 0;
 						<a href=""><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 					</ul>
 				</div>
-			</div>
+			</div> -->
 <script type="text/javascript">
 		$(document).ready(function(){
 			$(".product_check").click(function() {
