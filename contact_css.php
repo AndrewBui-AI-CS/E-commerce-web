@@ -10,7 +10,7 @@ body {
 	background: #fff;
 	color: white;
 	background-repeat: no-repeat;
-	/*background-image: url("https://www.idfreshfood.com/ae-en/wp-content/uploads/2017/09/contact_us_2.jpg");*/
+	background-image: url("https://www.idfreshfood.com/ae-en/wp-content/uploads/2017/09/contact_us_2.jpg");
 }
 .container {
 	width: 1000px;

@@ -33,13 +33,13 @@ include('connection.php');
 				<nav>
 					<ul>
 						<li><a href="main_page.php"><span>Home</span></a></li>
-						<li><a href="about.html">About</a></li>
+						<li><a href="about.php">About</a></li>
 						<li><a href="all_products_page.php">Products list</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="contact.php">Contact</a></li>
 						<li><a href="account.php">Account</a></li>
 					</ul>
 				</nav>
-				<img src="logo/cart.png" width="30px">
+				<a href="cart.php"><img src="logo/cart.png" width="30px"></a>
 			</div>
 			<div class="row">
 				<div class="col-2">
