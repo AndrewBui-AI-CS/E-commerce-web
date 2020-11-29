@@ -24,34 +24,42 @@
 	<title>Project I</title>
 </head>
 <body>
-		<h2>SHIPPING INFORMATION</h2>
+	<h2>SHIPPING INFORMATION</h2>
 	<div class="container">
-		     <div class="logo">
-		     <i class="fa fa-check-square-o" ></i>
+		<div class="logo">
+			<i class="fa fa-check-square-o" ></i>
 			<i class="fa fa-ship"></i>
 			<i class="fa fa-credit-card-alt"></i>
-		     </div>
+		</div>
 		<div class="row">
 			<!-- <p>Order</p>
 			<p>Shipping</p>
 			<p>Payment</p>
 			<p><small>Bring all to your home</small></p> -->
 			<form action="">
-			<label>User Contact</label>
-			<input type="text"  name="" placeholder="Full name">
-			<input type="tel" name="" placeholder="Phone number">
-			<input type="email" name ="" placeholder="Email">
-			<label>Shipping Info</label>
-			<div class="addr">
-				<input type="text" placeholder="Your address">
-			    <input placeholder="Date" class="textbox-n" type="text" onfocus="(this.type='date')" id="date">
-			    <input type="text" placeholder="Company">
-				<input type="number" placeholder="Zip/postal code">
+				<label>User Contact</label>
+				<input type="text"  name="" placeholder="Full name">
+				<input type="tel" name="" placeholder="Phone number">
+				<input type="email" name ="" placeholder="Email">
+				<label>Shipping Info</label>
+				<div class="addr">
+					<input type="text" placeholder="Your address">
+					<input placeholder="Date" class="textbox-n" type="text" onfocus="(this.type='date')" id="date">
+					<input type="text" placeholder="Company">
+					<input type="number" placeholder="Zip/postal code">
+				</div>
+				<div class="check-box">
+					<input type="checkbox" id="1" name="morning" value="7h:11h">
+					<label for="morning">7h:11h</label>
+					<input type="checkbox" id="2" name="afternoon" value="13h:17h">
+					<label for="afternoon">13h:17h</label>
+					<input type="checkbox" id="3" name="evening" value="19h:23h">
+					<label for="evening"> 19h:23h
+				</div>
+					<textarea name="message"  placeholder="Note"></textarea>
+					<button>Submit</button>
+				</form>
 			</div>
-			<textarea name="message" autofocus="" placeholder="Note"></textarea>
-			<button>Submit</button>
-		    </form>
 		</div>
-	</div>
-</body>
-</html>
+	</body>
+	</html>

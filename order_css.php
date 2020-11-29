@@ -13,13 +13,13 @@ body {
 }
 h2 {
 	text-align: center;
-	margin-top: 50px;
+	margin-top: 30px;
 	color: #d65218;
 }
 .container {
 	width: 1000px;
-	height: 840px;
-	margin: 50px auto;
+	height: 900px;
+	margin: 30px auto;
 	border: 1px solid;
 	padding: 50px 50px;
 	background: #1f1f1f;
@@ -192,4 +192,14 @@ textarea:focus{
   background: white;
   color: black;
   outline: orange 3px solid;
+}
+.check-box {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+
+}
+.check-box input[type=checkbox] {
+	width: 8%;
 }
