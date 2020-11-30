@@ -1,4 +1,10 @@
-
+<?php
+include('connection.php');
+if(isset($_GET['subtotal'])){
+	$add_subtotal_sql = "insert into Order_Info(subtotal) values(".$_GET['subtotal'].")";
+	$add_subtotal = sqlsrv_query($conn, $add_subtotal_sql);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,32 +38,28 @@
 			<i class="fa fa-credit-card-alt"></i>
 		</div>
 		<div class="row">
-			<!-- <p>Order</p>
-			<p>Shipping</p>
-			<p>Payment</p>
-			<p><small>Bring all to your home</small></p> -->
-			<form action="">
+			<form name = "form" action = "action.php" method = "get">
 				<label>User Contact</label>
-				<input type="text"  name="" placeholder="Full name">
-				<input type="tel" name="" placeholder="Phone number">
-				<input type="email" name ="" placeholder="Email">
+				<input type="text"  name="name" placeholder="Full name" required>
+				<input type="tel" name="phone"   placeholder="Phone number" required>
+				<input type="email" name ="email" placeholder="Email" required>
 				<label>Shipping Info</label>
 				<div class="addr">
-					<input type="text" placeholder="Your address">
-					<input placeholder="Date" class="textbox-n" type="text" onfocus="(this.type='date')" id="date">
-					<input type="text" placeholder="Company">
-					<input type="number" placeholder="Zip/postal code">
+					<input type="text" name = 'address' placeholder="Your address" required>
+					<input placeholder="Date" class="textbox-n" type="text" onfocus="(this.type='date')" id="date" name = 'date' required>
+					<input type="text" name = 'company' placeholder="Company" required>
+					<input type="number" name ='code' placeholder="Zip/postal code" required>
 				</div>
 				<div class="check-box">
-					<input type="checkbox" id="1" name="morning" value="7h:11h">
+					<input type="checkbox" name="ship[]" id = 'ship'  value="7h:11h">
 					<label for="morning">7h:11h</label>
-					<input type="checkbox" id="2" name="afternoon" value="13h:17h">
+					<input type="checkbox" name="ship[]"  id = 'ship' value="13h:17h">
 					<label for="afternoon">13h:17h</label>
-					<input type="checkbox" id="3" name="evening" value="19h:23h">
+					<input type="checkbox" name="ship[]"  id = 'ship'  value="19h:23h">
 					<label for="evening"> 19h:23h
-				</div>
+					</div>
 					<textarea name="message"  placeholder="Note"></textarea>
-					<button>Submit</button>
+					<input type="submit">
 				</form>
 			</div>
 		</div>

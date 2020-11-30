@@ -33,7 +33,7 @@ $URL = array("");
 				}
 				else $temp = "all_products_page.php?view=view&id_categories=".$category_row['productCategoryId'];
 					array_push($URL,$temp);?>
-					<a href="<?php echo $URL[$i]?>"><?php echo $category_row['productCategoryName'] ?><span>(<?php echo $category_row['soluong']; echo $i;?>)</span></a>
+					<a href="<?php echo $URL[$i]?>"><?php echo $category_row['productCategoryName'] ?><span>(<?php echo $category_row['soluong'];?>)</span></a>
 			<?php $i++;$k++;} ?>
 		</div>
 		<button class="dropdown-btn">Brands<i class = "fa fa-plus"></i></button>
@@ -54,7 +54,7 @@ $URL = array("");
 				else $temp = "all_products_page.php?view=view&id_brands=".$brand_row['brandsId'];
 				array_push($URL,$temp);
 					?>
-				<a href="<?php echo $URL[$i]?>"><?php echo $brand_row['brandsName'] ?><span>(<?php echo $brand_row['soluong']; echo $j; ?>)</span></a>
+				<a href="<?php echo $URL[$i]?>"><?php echo $brand_row['brandsName'] ?><span>(<?php echo $brand_row['soluong'];?>)</span></a>
 			<?php $i++;$j++;} ?>
 		</div>
 		<button class="dropdown-btn">Size<i class = "fa fa-plus"></i></button>
@@ -75,7 +75,7 @@ $URL = array("");
 				else $temp = "all_products_page.php?view=view&id_size=".$size_row['idSize'];
 				array_push($URL,$temp);
 					?>
-				<a href="<?php echo $URL[$i]?>"><?php echo $size_row['sizeName'] ?><span>(<?php echo $size_row['quantity'];echo $k;?>)</span></a>
+				<a href="<?php echo $URL[$i]?>"><?php echo $size_row['sizeName'] ?><span>(<?php echo $size_row['quantity'];?>)</span></a>
 			<?php $i++;} ?>
 		</div>
 			<button class="dropdown-btn">Prices<i class = "fa fa-plus"></i></button>

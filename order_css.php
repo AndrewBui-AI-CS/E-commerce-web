@@ -78,7 +78,7 @@ textarea {
 	color: #999;
 	margin-top: 5px;
 }
-button {
+input[type=submit] {
 	border-radius: 30px;
 	width: 100%;
 	height: 40px;

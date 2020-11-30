@@ -3,6 +3,19 @@ include('connection.php');
 $cart_sql = "select * from Product inner join Cart on product.productId = Cart.productId";
 $cart = sqlsrv_query($conn, $cart_sql);
 $sum = 0;
+$i=0;
+if(isset($_GET['productId']))
+{
+	$remove_sql = "delete from cart
+    where productid = ".$_GET['productId'];
+	$remove = sqlsrv_query($conn, $remove_sql);
+	if( isset( $_GET["caller"] ) && $_GET["caller"] == "somevalue" ) {
+    // I'm using Location because this will remove the get value
+    header( "Location: cart.php" );
+    exit;
+	}
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,9 +50,9 @@ $sum = 0;
 				<nav>
 					<ul>
 						<li><a href="main_page.php"><span>Home</span></a></li>
-						<li><a href="about.html">About</a></li>
+						<li><a href="about.php">About</a></li>
 						<li><a href="all_products_page.php">Products list</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="contact.php">Contact</a></li>
 						<li><a href="account.php">Account</a></li>
 					</ul>
 				</nav>
@@ -75,7 +88,7 @@ $sum = 0;
 
 						<small>Price: <?php echo $row['price']?>đ</small>
 						<br>
-						<a href="">Remove</a>
+						<a href="<?php echo "cart.php?caller=somevalue&productId=".$row['productId']?>">Remove</a>
 						</div>
 
 					</div>
@@ -97,11 +110,11 @@ $sum = 0;
 				</tr>
 				<tr>
 					<td>Total</td>
-					<td><?php echo $sum + 35000; ?>đ</td>
+					<td><?php $total = $sum + 35000; echo $total;?>đ</td>
 				</tr>
 			</table>
 		</div>
-		<a href="order.php" class = 'btn'>Confirm order</a>
+		<a href="<?php echo "order.php?subtotal=".$total ?>" class = 'btn'>Confirm order</a>
 	</div>
 	<!-- -----------------------footer------------------- -->
 	<footer>
@@ -167,6 +180,17 @@ $sum = 0;
 				menuItems.style.maxHeight = "0px";
 			}
 		}
+		function remove() {
+      		$.ajax({
+           type: "POST",
+           url: 'ajax.php',
+           data:{action:'remove'},
+           success:function(html) {
+             alert(html);
+           }
+
+      });
+ }
 	</script>
 </body>
 </html>

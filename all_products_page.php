@@ -39,7 +39,7 @@ include('connection.php');
 						<li><a href="account.php">Account</a></li>
 					</ul>
 				</nav>
-				<a href="cart.php"><img src="logo/cart.png" width="30px"></a>
+				<a href="cart.php"  id = 'cart'><img src="logo/cart.png" width="30px"></a>
 			</div>
 			<div class="row">
 				<div class="col-2">
@@ -135,6 +135,9 @@ include('connection.php');
 				dropdownContent.style.display = "block";
 			}
 		});
+	}
+	function cart_change() {
+		alert('add 1 product to cart');
 	}
 </script>
 </body>
